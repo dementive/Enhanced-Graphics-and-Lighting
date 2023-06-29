@@ -17,8 +17,8 @@ Code
 	{
 		Alpha = saturate(Alpha);
 		
-		const float SCALE = min(1.0f,(1.0f-Alpha)*1.6f);
+		float FogScale = min(1.0f,(1.0f-Alpha)*1.6f);
 		
-		return float4( FoWColor2.rgb, SCALE );
+		return float4( FoWColor2.rgb, FogScale );
 	}
 ]]
