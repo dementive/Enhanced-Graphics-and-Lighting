@@ -11,7 +11,6 @@ Includes = {
 	"constants.fxh"
 	"standardfuncsgfx.fxh"
 	"winter.fxh"
-	"cw/heightmap.fxh"
 }
 
 PixelShader =
@@ -738,40 +737,3 @@ Effect SKYX_sky_selection_mapobject
 	PixelShader = "SKYX_PS_sky"
 }
 # END MOD
-
-# Snap to Terrain shaders from CK3.
-
-# Shader effects "imported" from indomita
-
-
-Effect snap_to_terrain
-{
-	VertexShader = "VS_standard"
-	PixelShader = "PS_standard"
-	
-	Defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
-}
-Effect snap_to_terrainShadow
-{
-	VertexShader = "VertexPdxMeshStandardShadow"
-	PixelShader = "PixelPdxMeshStandardShadow"
-	
-	Defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
-	RasterizerState = ShadowRasterizerState
-}
-
-Effect snap_to_terrain_mapobject
-{
-	VertexShader = "VS_jomini_mapobject_shadow"
-	PixelShader = "PS_jomini_mapobject_shadow"
-	
-	Defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" "ENABLE_SNOW" }
-}
-Effect snap_to_terrainShadow_mapobject
-{
-	VertexShader = "VS_jomini_mapobject_shadow"
-	PixelShader = "PS_jomini_mapobject_shadow"
-	
-	Defines = { "PDX_MESH_SNAP_VERTICES_TO_TERRAIN" }
-	RasterizerState = ShadowRasterizerState
-}
